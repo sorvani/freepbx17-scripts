@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ "$EUID" -ne 0 ]
+  then printf "This script must be executed with as the root user. Please run again after swithcing to root.\n"
+  exit
+fi
 
 # This script is designed to be executed immediately after completing the installation of Debian, prior to doing anything with FreePBX 17.
 
