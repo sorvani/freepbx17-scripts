@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ "$EUID" -ne 0 ]
+  then printf "This script must be executed with sudo. Please run again: sudo ./add_debian_user.sh\n"
+  exit
+fi
 
 # This script is designed to be executed when you need to add another user to the FrePBX 17 host Debian system.
 # It is assumed that you already have the ssh-key-sync application installed.
