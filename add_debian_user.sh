@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # This script is designed to be executed when you need to add another user to the FrePBX 17 host Debian system.
+# It is assumed that you already have the ssh-key-sync application installed.
+# https://github.com/shoenig/ssh-key-sync
 
 # collect the linux username and github username of the person runnning the script
 read -p "Enter a new username to use for SSH access: " myUserName
