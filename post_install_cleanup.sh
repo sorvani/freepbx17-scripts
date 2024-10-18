@@ -18,8 +18,7 @@ fwconsole ma delete callerid | tee -a $logfile
 fwconsole ma delete calllimit | tee -a $logfile
 fwconsole ma delete cdrpro | tee -a $logfile
 fwconsole ma delete conferencespro | tee -a $logfile
-fwconsole ma delete cos | tee -a $logfile
-fwconsole ma delete endpoint | tee -a $logfile
+
 fwconsole ma delete extensionroutes | tee -a $logfile
 fwconsole ma delete faxpro | tee -a $logfile
 fwconsole ma delete oracle_connector | tee -a $logfile
@@ -30,18 +29,25 @@ fwconsole ma delete pms | tee -a $logfile
 fwconsole ma delete queuestats | tee -a $logfile
 fwconsole ma delete qxact_reports | tee -a $logfile
 fwconsole ma delete recording_report | tee -a $logfile
-fwconsole ma delete restapps | tee -a $logfile
 fwconsole ma delete sangomaconnect | tee -a $logfile
 fwconsole ma delete sangomacrm | tee -a $logfile
 fwconsole ma delete sangomartapi | tee -a $logfile
 fwconsole ma delete sipstation | tee -a $logfile
-fwconsole ma delete sms | tee -a $logfile
 fwconsole ma delete smsplus | tee -a $logfile
 fwconsole ma delete vmnotify | tee -a $logfile
 fwconsole ma delete voicemail_report | tee -a $logfile
 fwconsole ma delete voipinnovations | tee -a $logfile
 fwconsole ma delete vqplus | tee -a $logfile
 fwconsole ma delete webcallback | tee -a $logfile
+
+#pms and oracle_connector dpend on this.
+fwconsole ma delete cos | tee -a $logfile 
+#sangomaconnect depends on this.
+fwconsole ma delete sms | tee -a $logfile
+#sangomaconnect depends on this.
+fwconsole ma delete restapps | tee -a $logfile
+#restapps depends on this.
+fwconsole ma delete endpoint | tee -a $logfile
 
 printf "Removing rarely needed Open Source modules\n" | tee -a $logfile
 fwconsole ma delete amd >> $logfile
