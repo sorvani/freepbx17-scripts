@@ -9,7 +9,7 @@ read -p "Enter the github usernamer of $myUserName: " myGitName
 # Create user account with default password of ChangeMe
 echo "Creating the user $myUserName and assigning permissions"
 echo ""
-useradd --create-home $myUserName --password $(openssl passwd -1 ChangeMe) >> setup.log
+useradd --create-home $myUserName --password $(openssl passwd -1 ChangeMe) --shell /bin/bash>> setup.log
 # expire the password to force reset on first login
 chage -d 0 $myUserName >> setup.log
 # Add user to wheel and asterisk groups
